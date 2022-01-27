@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Menu Bar</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+    <script src="js/button.js"></script>
+    <script src="js/handlemarker.js"></script>
+    <script src="js/createmarker.js"></script>
+  
+
+    <!-- Sweert Alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-firestore.js"></script>
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        crossorigin="anonymous" />
+
+
+
+    <!-- Local file -->
+    <link href="./style.css" rel="stylesheet" />
+
+    <!-- database -->
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDAjuLVNNG3tA2j2fGlD9tcAjl9RfbSjs8",
+            authDomain: "pizza-vr.firebaseapp.com",
+            projectId: "pizza-vr",
+            storageBucket: "pizza-vr.appspot.com",
+            messagingSenderId: "599160590332",
+            appId: "1:599160590332:web:2e417856fdf637a57d6c79"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+   
+    </script>
+
+
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+    <a-scene embedded vr-mode-ui="enabled: false" arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; 
+    displayHeight: 960;debugUIEnabled: false;" id="main-scene" gesture-detector create-button create-markers>
+
+
+
+        <!-- Camera -->
+        <a-entity camera></a-entity>
+        <a-entity create-markers></a-entity>
+   
+        
+    </a-scene>
+
+    <!-- Button div Tag -->
+    <div id="button-id"></div>
+
+</body>
+
+</html>
